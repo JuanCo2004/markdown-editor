@@ -37,15 +37,43 @@ btnContrast.addEventListener("click", function(){
 });
 
 function aplicarContraste() {
-    const headers = previewArea.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    headers.forEach(h => {
-        h.classList.add('text-red-600', 'text-xl', 'font-bold');
+    previewArea.querySelectorAll('h1').forEach(h => {
+        h.classList.add('text-red-600', 'text-4xl', 'font-bold');
+    });
+    previewArea.querySelectorAll('h2').forEach(h => {
+        h.classList.add('text-orange-600', 'text-3xl', 'font-bold');
+    });
+    previewArea.querySelectorAll('h3').forEach(h => {
+        h.classList.add('text-yellow-600', 'text-2xl', 'font-bold');
+    });
+    previewArea.querySelectorAll('h4').forEach(h => {
+        h.classList.add('text-green-600', 'text-xl', 'font-semibold');
+    });
+    previewArea.querySelectorAll('h5').forEach(h => {
+        h.classList.add('text-blue-600', 'text-lg', 'font-medium');
+    });
+    previewArea.querySelectorAll('h6').forEach(h => {
+        h.classList.add('text-purple-600', 'text-base', 'italic');
     });
 }
 
 function quitarContraste() {
-    const headers = previewArea.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    headers.forEach(h => {
-        h.classList.remove('text-red-600', 'text-xl', 'font-bold');
+    previewArea.querySelectorAll('h1').forEach(h => {
+        h.classList.remove('text-red-600', 'text-4xl', 'font-bold');
+    });
+    previewArea.querySelectorAll('h2').forEach(h => {
+        h.classList.remove('text-orange-600', 'text-3xl', 'font-bold');
+    });
+    previewArea.querySelectorAll('h3').forEach(h => {
+        h.classList.remove('text-yellow-600', 'text-2xl', 'font-bold');
+    });
+    previewArea.querySelectorAll('h4').forEach(h => {
+        h.classList.remove('text-green-600', 'text-xl', 'font-semibold');
+    });
+    previewArea.querySelectorAll('h5').forEach(h => {
+        h.classList.remove('text-blue-600', 'text-lg', 'font-medium');
+    });
+    previewArea.querySelectorAll('h6').forEach(h => {
+        h.classList.remove('text-purple-600', 'text-base', 'italic');
     });
 }
