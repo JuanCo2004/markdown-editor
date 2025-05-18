@@ -16,9 +16,15 @@ btnPreview.addEventListener("click", function(){
     content = content.replace(/^## (.*$)/gm, '<h2>$1</h2>');
     content = content.replace(/^# (.*$)/gm, '<h1>$1</h1>');
 
-    // Listas
+    // Primero transformar listas con viñetas (- o *) en <ul>
     content = content.replace(/^([-*]) (.*)$/gm, '<li>$2</li>');
     content = content.replace(/(<li>.*<\/li>)/gms, '<ul>$1</ul>');
+
+    // Luego transformar listas numeradas en <ol>
+    // Usamos la función que definí para lista enumeradas:
+    content = convertNumberedListsToHTML(content);
+    // Resaltado de bloques de código
+    content = transformCodeBlocks(content);
 
     previewArea.innerHTML = content;
 
