@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor de Markdown</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col h-screen bg-gray-100 text-gray-800 font-sans">
+
+  <header class="bg-gray-800 text-white p-4 text-center">
+    <h1 class="text-xl font-semibold">Editor de Markdown</h1>
+    <button id="clear-button" class="mt-4 bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">
+        Limpiar
+    </button>
+    <div id="counter" class="mt-2 text-sm text-gray-200">
+        Palabras: 0 | Caracteres: 0
+    </div>
+  </header>
+
+  <div class="flex flex-1 overflow-hidden flex-col md:flex-row">
+    <!-- Editor -->
+    <div class="flex-1 p-4 bg-white border-b md:border-b-0 md:border-r border-gray-300 overflow-y-auto">
+      <textarea id="markdown-input"
+        placeholder="Escribe Markdown aquí..."
+        class="w-full h-full resize-none border-none outline-none font-mono text-base p-2 leading-relaxed">
+      </textarea>
+    </div>
+
+    <!-- Vista previa -->
+    <div class="flex-1 p-4 bg-white overflow-y-auto">
+      <div id="preview-output" class="prose prose-sm sm:prose lg:prose-lg max-w-none">
+        <!-- El contenido renderizado aparecerá aquí -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
