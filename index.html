@@ -12,16 +12,31 @@
     <script src="js/format.js" defer></script>
 
 </head>
-<body class="h-screen flex flex-col">
+<body class="h-screen flex flex-col bg-white">
     <!-- Barra de herramientas -->
-    <header id="toolbar" class="fixed top-0 w-full flex justify-center gap-4 p-3 bg-gray-800 text-white md:top-0 md:bottom-auto z-50">
-        <button id="btn-preview" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">Generar Vista Previa</button>
-        <button id="btn-contrast" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded">Contrastar Encabezados</button>
-        <button id="btn-alternar-formato" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Aplicar Formato</button>
+    <header id="toolbar" class="fixed top-0 w-full flex flex-col items-center p-3 bg-gray-800 text-white z-50">
+        <!-- Botones -->
+        <div class="flex flex-wrap justify-center gap-4">
+            <button id="btn-preview" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">Generar Vista Previa</button>
+            <button id="btn-contrast" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded">Contrastar Encabezados</button>
+            <button id="btn-alternar-formato" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Aplicar Formato</button>
+            <button id="btn-tema" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">Alternar Tema</button>
+            <button id="clear-button" class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">
+                Limpiar
+            </button>
+        </div>
+
+        <!-- Contador -->
+        <div id="counter" class="self-end mt-2 text-sm text-gray-200 w-full text-center">
+            Palabras: 0 | Caracteres: 0
+        </div>
+
+        <!-- Mensaje de error -->
+        <div id="error-message" class="hidden text-red-400 text-sm mt-2"></div>
     </header>
 
     <!-- Contenido principal -->
-    <main class="flex-1 flex flex-col md:flex-row mt-16 md:mt-14 md:mb-0 overflow-hidden">
+    <main class="flex-1 flex flex-col md:flex-row mt-16 md:mt-30 md:mb-0 overflow-hidden">
 
         <!-- Editor -->
         <section class="editor flex-1 overflow-auto bg-gray-100 p-4">
@@ -30,7 +45,7 @@
 
         <!-- Vista previa -->
         <section id="previewArea" class="preview flex-1 overflow-auto bg-white p-4 border-t md:border-t-0 md:border-l border-gray-300">
-            Vista previa aparecerá aquí...
+            <!-- El contenido se generará dinámicamente -->
         </section>
     </main>
 
